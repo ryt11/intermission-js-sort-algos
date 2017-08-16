@@ -19,7 +19,8 @@ describe("Bubble sort tests", function() {
   it ("can sort an array of numbers", function(){
     var sort = new bubbleSort;
     var sortable = [8, 6, 3, 1, 2]
-    assert.equal(sort.sort(sortable), [1, 2, 3, 6, 8])
+    assert.equal(sort.sort(sortable)[0], 1)
+    assert.equal(sort.sort(sortable)[sortable.length - 1], 8)
   });
 });
 

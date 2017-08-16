@@ -1,31 +1,36 @@
+
+
 class BubbleSort {
   constructor() {}
 
-  swap (index, items) {
+  swap(index, items) {
     var swap_item = items[index];
     var adjacent = items[index + 1];
     items[index] = adjacent
     items[index + 1] = swap_item
     return items;
-  };
+  }
 
-  isGreater (current, adjacent) {
+  isGreater(current, adjacent) {
     return current > adjacent;
-  };
+  }
 
-  sort (items) {
-    for (i = 0; i < items.length; i++) {
-      items.forEach(function(item, index){
-        if (isGreater(item, item[index + 1])) {
-          items = swap(index, items)
-        };
-      });
+  swapController(items) {
+    for (var i = 0; i < items.length; i++) {
+      if (i !== items.length && this.isGreater(items[i], items[i + 1])) {
+        this.swap(i, items);
+      };
     }
+    return items;
+  }
 
-
-  };
-};
-
+  sort(items) {
+    for (var  i = 0; i < items.length; i++) {
+      this.swapController(items);
+    };
+    return items;
+  }
+}
 
 
 
