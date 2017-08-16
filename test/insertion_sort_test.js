@@ -4,9 +4,9 @@ var insertionSort = require('../insertion_sort');
 
 
 describe("insertion sort unit tests", function(){
-  it("can add first element to new array", function(){
+  it("can sort an array", function(){
     var iS = new insertionSort;
     var testArray = [4,2,7,1,3]
-    assert.equal(iS.sort(testArray), [4])
+    assert.equal(JSON.stringify(iS.sort(testArray)), JSON.stringify([1, 2, 3, 4, 7]))
   });
 });
